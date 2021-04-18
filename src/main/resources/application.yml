@@ -14,7 +14,6 @@ spring:
       ddl-auto: create-drop
     properties:
       hibernate:
-        schema: public
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
         show_sql: true
@@ -37,18 +36,16 @@ spring:
               serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
       bindings:
         checkout-created-input:
-          binder: kafka
           destination: streaming.ecommerce.checkout.created
           contentType: application/*+avro
           group: ${spring.application.name}
           consumer:
-            use-native-encoding: true
+            use-native-decoding: true
         payment-paid-output:
-          binder: kafka
           destination: streaming.ecommerce.payment.paid
           contentType: application/*+avro
           producer:
-            use-native-decoding: true
+            use-native-encoding: true
   kafka:
     properties:
       schema:
