@@ -18,7 +18,7 @@ dados.
 * Schema Registry
 
 👣 Passo a passo:
-* Desenvolvimento da [aplicação de checkout](https://github.com/andressaOlimpia/ecommerce-microsservice-checkout)
+* Desenvolvimento da [aplicação de checkout](https://github.com/andressaOlimpia/ecommerce-microservice-checkout)
     - Subir o Postgres, zookeeper e Schema-registry e broker via docker compose (Compose file disponibilizado na pasta docker pelo professor)
     - Criação dos schemas avro CheckoutCreated.avsc e PaymentCreated.avsc;
     - Configuração do arquivo application.yml;
